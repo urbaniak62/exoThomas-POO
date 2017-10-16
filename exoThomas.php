@@ -151,10 +151,10 @@ class Form{
     $this->_submit="<input type='submit'>";
   }
   public function setFieldset($fieldset){
-    $this->_fieldset="<fieldset>fieldset</fieldset>";
+    $this->_fieldset="<form methode ='post'><fieldset>fieldset";
   }
   public function setForm($form){
-    $this->_form="<form methode ='post'>";
+    $this->_form="</fieldset></form>";
   }
   public function getText(){
     return $this->_text;
@@ -169,13 +169,13 @@ class Form{
     return $this->_form;
   }
   public function code(){
-    echo $this->_fieldset . " " . $this->_form
+    echo $this->_form . " " . $this->_fieldset
     . " " . $this->_text . " " . $this->_submit;
   }
 }
 $tab=new Form("form","fieldset");
 $tab->setText("textaera");
 $tab->setSubmit("submit");
-echo $tab->code();
+ $tab->code();
 
  ?>
