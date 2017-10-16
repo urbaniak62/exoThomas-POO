@@ -126,6 +126,10 @@ $nico->affiche();
 
 unset($nico);
 // $nico->affiche();
+
+// ------------exercice 4 ---
+
+
 echo "<h1>excercice4</h1><br><br>";
 
 class Form{
@@ -141,16 +145,16 @@ class Form{
     $this->setFieldset($fieldset);
   }
   public function setText($text){
-    $this->_text=$text;
+    $this->_text="<textaera></textaera>";
   }
   public function setSubmit($submit){
-    $this->_submit=$submit;
+    $this->_submit="<input type='submit'>";
   }
   public function setFieldset($fieldset){
-    $this->_fieldset=$fieldset;
+    $this->_fieldset="<fieldset>fieldset</fieldset>";
   }
   public function setForm($form){
-    $this->_form=$form;
+    $this->_form="<form methode ='post'>";
   }
   public function getText(){
     return $this->_text;
@@ -169,9 +173,9 @@ class Form{
     . " " . $this->_text . " " . $this->_submit;
   }
 }
-$tab=new Form('<fieldset>fieldset<form>','</form></fieldset>');
-$tab->setText('<textaera>message:</textaera>');
-$tab->setSubmit('<button type="submit">envoyer</button>');
+$tab=new Form("form","fieldset");
+$tab->setText("textaera");
+$tab->setSubmit("submit");
 echo $tab->code();
 
  ?>
