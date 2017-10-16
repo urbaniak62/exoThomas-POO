@@ -126,6 +126,52 @@ $nico->affiche();
 
 unset($nico);
 // $nico->affiche();
-echo "<h1>excercice4</h1><br><br><br>";
+echo "<h1>excercice4</h1><br><br>";
+
+class Form{
+  private $_text;
+  private $_submit;
+  private $_fieldset;
+  private $_form;
+
+
+
+  public function __construct($form,$fieldset){
+    $this->setForm($form);
+    $this->setFieldset($fieldset);
+  }
+  public function setText($text){
+    $this->_text=$text;
+  }
+  public function setSubmit($submit){
+    $this->_submit=$submit;
+  }
+  public function setFieldset($fieldset){
+    $this->_fieldset=$fieldset;
+  }
+  public function setForm($form){
+    $this->_form=$form;
+  }
+  public function getText(){
+    return $this->_text;
+  }
+  public function getSubmit(){
+    return $this->_submit;
+  }
+  public function getFieldset(){
+    return $this->_fieldset;
+  }
+  public function getForm(){
+    return $this->_form;
+  }
+  public function code(){
+    echo $this->_fieldset . " " . $this->_form
+    . " " . $this->_text . " " . $this->_submit;
+  }
+}
+$tab=new Form('<fieldset>fieldset<form>','</form></fieldset>');
+$tab->setText('<textaera>message:</textaera>');
+$tab->setSubmit('<button type="submit">envoyer</button>');
+echo $tab->code();
 
  ?>
