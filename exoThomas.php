@@ -145,7 +145,7 @@ class Form{
     $this->setFieldset($fieldset);
   }
   public function setText($text){
-    $this->_text="<textaera></textaera>";
+    $this->_text="<br><label>message</label><input type='text'>";
   }
   public function setSubmit($submit){
     $this->_submit="<input type='submit'>";
@@ -176,6 +176,11 @@ class Form{
 $tab=new Form("form","fieldset");
 $tab->setText("textaera");
 $tab->setSubmit("submit");
- $tab->code();
+$tab->code();
+
+$tab1=new Form("form","fieldset");
+$tab1->setText("textaera");
+$tab1->setSubmit("submit");
+$tab1->code();
 
  ?>
