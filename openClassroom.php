@@ -163,4 +163,52 @@ echo  $jojo->afficheName() . " a " . $jojo->afficheForce() . " de force "
       . $jojo->afficheForce()  ;
 echo  " la vie de jaja est de " . $jaja->afficheVie();
 
+// -------------MANIPULATION DES objets
+
+class personnage{
+  private $_id;
+  private $_nom;
+  private $_force;
+  private $_experience;
+  private $_degat;
+  private $_niveau;
+
+  public function setId($id){
+    $this->_id=$id;
+  }
+  public function setNom{
+    $this->_nom=$nom;
+  }
+  public function setForce($force){
+    $this->_force=$force;
+  }
+  public function setExperience($experience){
+    $this->_experience=$experience;
+  }
+  public function setDegat($degat){
+    $this->_degat=$degat;
+  }
+  public function setNiveau($niveau){
+    $this->_niveau=$niveau;
+  }
+  public function getId(){
+    return $this->_id;
+  }
+  public function getNom(){
+    return $this->_nom;
+  }
+  public function getForce(){
+    return $this->_force;
+  }
+  public function getExperience(){
+    return $this->_experience;
+  }
+  public function getDegat(){
+    return $this->_degat;
+  }
+  public function getNiveau(){
+    return $this->_niveau;
+  }
+}
+
  ?>

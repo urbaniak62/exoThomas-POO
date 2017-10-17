@@ -1,6 +1,7 @@
 <?php
 echo "<h1>excercice1</h1><br><br><br>";
 
+
 class Ville{
   private $_nom;
   private $_dep;
