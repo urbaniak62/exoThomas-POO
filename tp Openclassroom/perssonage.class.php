@@ -13,9 +13,16 @@ class Personnage
 // --------------------------------constructeur
 // --------------------------------------------
 
-  public function __construct($degat,$nom){
-    $this->setDegat($degat);
-    $this->setNom($nom);
+  public function __construct(array $donnes){
+    $this->hydrate($donnes);
+  }
+  public function hydrate(array $donnes){
+    foreach ($donnees as $key => $value) {
+      $method = 'set'.ucfirst($key);
+      if (method_exists($this, $method)) {
+        $this->$method($value);
+      }
+    }
   }
 
 // ---------------------------------setters
@@ -34,6 +41,11 @@ class Personnage
 
 // -----------------------------------getters
 //-------------------------------------------
+
+  public function getId(){
+    return $this->_id;
+  }
+
   public function getNom(){
     return $this->_nom;
   }
