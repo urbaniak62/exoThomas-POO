@@ -1,7 +1,4 @@
 <?php
-
-
-
 class Personnage
 
 {
@@ -16,7 +13,9 @@ class Personnage
   public function __construct(array $donnes){
     $this->hydrate($donnes);
   }
-  public function hydrate(array $donnes){
+// ---------------------------------hydratation
+// --------------------------------------------
+  public function hydrate(array $donnees){
     foreach ($donnees as $key => $value) {
       $method = 'set'.ucfirst($key);
       if (method_exists($this, $method)) {
@@ -32,8 +31,8 @@ class Personnage
     $this->_id=$id;
   }
 
-  public function setDegat($degat){
-    $this->_degat=$degat;
+  public function setDegat($degats){
+    $this->_degat=$degats;
   }
   public function setNom($nom){
     $this->_nom=$nom;
@@ -68,6 +67,9 @@ public function rammasse(){
   $this->_degat +=5;
     echo $this->_nom . "a été frappé";
     }
+public function affiche(){
+  echo $this->_nom . " " . $this->_degat;
+}
 
 }
 
