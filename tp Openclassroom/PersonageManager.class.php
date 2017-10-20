@@ -19,7 +19,7 @@ include_once('connection.class.php');
 
         $req->execute (array(
   'nom'=>$insert->getNom(),
-  'degats'=>$insert->getDegat()
+  'degats'=>$insert->getDegats()
   ));
 }
 
@@ -37,19 +37,26 @@ include_once('connection.class.php');
 // ---------------MISE a jour dans la base de donné
 
 //     public function update(personnage $personage){
-//       public function read(){
-//         $req=connection()->query("SELECT * FROM personnage");
-//   $donne= $req->fetchAll();
 //
 //   return $donne;
 //     }
+
 // }
 // ---------------suprime un objet de la bdd
 
     // public function delete(perssonage $personage){
     //
     // }
+    public function setBdd($bdd){
+    $this->_bdd=$bdd;
   }
+
+  public function getBdd(){
+    return $this->_bdd;
+  }
+
+  }
+
 
 
  ?>

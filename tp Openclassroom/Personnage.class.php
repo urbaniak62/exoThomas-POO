@@ -4,7 +4,7 @@ class Personnage
 {
 
   private $_id;
-  private $_degat;
+  private $_degats;
   private $_nom;
 
 // --------------------------------constructeur
@@ -31,8 +31,8 @@ class Personnage
     $this->_id=$id;
   }
 
-  public function setDegat($degats){
-    $this->_degat=$degats;
+  public function setDegats($degats){
+    $this->_degats=$degats;
   }
   public function setNom($nom){
     $this->_nom=$nom;
@@ -48,13 +48,13 @@ class Personnage
   public function getNom(){
     return $this->_nom;
   }
-  public function getDegat(){
-    return $this->_degat;
+  public function getDegats(){
+    return $this->_degats;
   }
   // ----------------------methode frappe
   // --------------------------------------
   public function frapper($cible){
-    if ($this->_id==$this->_id) {
+    if ($cible->_id==$this->_id) {
       echo "mauvaise cible";
     }else {
       $cible->rammasse();
@@ -64,11 +64,11 @@ class Personnage
 // ------------------------methode recevoir degat
 // ----------------------------------------------
 public function rammasse(){
-  $this->_degat +=5;
+  $this->_degats +=5;
     echo $this->_nom . "a été frappé";
     }
 public function affiche(){
-  echo $this->_nom . " " . $this->_degat;
+  echo $this->_nom . " " . $this->_degats;
 }
 
 }
